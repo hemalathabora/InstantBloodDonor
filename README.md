@@ -137,13 +137,6 @@ gunicorn index:app
 
 ---
 
-## Author
-
-**Hema Reddy**
-B.Tech Computer Science Engineering Student
-
----
-
 ## License
 
 This project is developed for **educational purposes**.
