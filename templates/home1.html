@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <title>IBD</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7ae042e221.js" crossorigin="anonymous"></script>
+    <style>
+.blood-card-item1{
+    text-align: center;
+    width:50vw;
+    border-radius: 9px;
+    padding: 50px;
+    margin: 15px;
+  }
+.blood-card-item2{
+    text-align: center;
+
+    width:50vw;
+    border-radius: 9px;
+    padding: 51px;
+    margin: 15px;
+}
+.blood-card-image {
+    height: 200px;
+    width: 200px;
+
+  }
+.img-fluid{
+  height: auto;
+  width: 750pc;
+}
+.sideplaySize{
+  width: 60%;
+  height: 50px;
+}
+.blood-donation-bg-container {
+
+}
+
+.blood-donation-heading {
+  color: #640803;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: bold;
+  padding: 30px;
+}
+
+.blood-donation-card-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 50px;
+  margin: 15px;
+  width: 50vw;
+}
+
+.blood-donation-card-heading {
+  color: #91110a;
+  font-family: "Roboto";
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.blood-donation-card-description {
+  color: #6c6b70;
+  font-family: "Roboto";
+  font-size: 15px;
+  padding: auto;
+}
+
+.blood-donation-card-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 5%;
+
+}
+
+.follow-us-section {
+  background-color: white;
+}
+
+.follow-us-section-heading {
+  text-align: center;a
+  color: #561818;
+  font-family: "Roboto";
+  font-size: 28px;
+  font-weight: 700;
+}
+.follow-us-icon-container {
+  background-color: #faf7e8;
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin: 15px;
+  padding-top: 22px;
+  padding-bottom: 14px;
+  padding-right: 16px;
+  padding-left: 22px;
+}
+.icon {
+  color: #d0001c;
+  font-size: 35px;
+}
+
+.footer-section {
+  background-color:black;
+}
+.footer-section-mail-id {
+  color: white;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.footer-section-address {
+  color: #959ead;
+  font-family: "Roboto";
+  font-size: 14px;
+}
+
+.follow-us-icon-container1 {
+  background-color: #faf7e8;
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  padding-top: 22px;
+  padding-bottom: 14px;
+  padding-right: 16px;
+  padding-left: 22px;
+}
+.blood-box{
+  text-align: center
+}
+.size-corsol{
+  width: 30%;
+
+}
+
+
+    </style>
+</head>
+<body>
+  <!--navbar-->
+	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="#" style="font-family:Aparajita;font-weight:bold;font-size:150%;">INSTANT BLOOD DONORS</a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                &#9776;
+            </button>
+            <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+				<a class="nav-link" href="/">Home</a>
+			  </li>
+                     <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                    <a class="dropdown-item" href="/donate">Donor Registration</a>
+                    <a class="dropdown-item" href="/findblood">Find Blood Donor</a>
+                </div>
+            </li>
+                    <li class="nav-item"><a href="#followUsSection" class="nav-link">Follow Us</a></li>
+                    <li class="nav-item"><a href="/feedback" class="nav-link">Feedback</a></li>
+                </ul>
+                <!--logout-->
+                <div class="nav navbar-nav flex-row justify-content-between ml-auto">
+                       <a href="/logout"><button type="button" id="button1"  class="btn btn-danger" >Logout <span class="caret"></span></button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!--bgimage-->
+<div class="image">
+  <img src="https://www.sriramakrishnahospital.com/wp-content/uploads/2021/06/Blood-Donation-1.jpg" class="img-fluid" alt="Responsive image" title="Donate Blood" >
+</div>
+<!--buttons-->
+<div class="blood-button-section">
+  <div class="d-flex flex-row justify-content-center">
+    <div class="blood-card-item1">
+      <div class="blood-box">
+
+        <img
+        src="https://media.istockphoto.com/id/1333549205/vector/heart-with-plus-line-icon-donation-concept-charity-and-humanitarian-aid-linear-pictogram.jpg?s=612x612&w=0&k=20&c=CjcAIGptQRHcGojBiZZBnO9_ZjJSD6oF7SEnvOjG1lk="
+        class="blood-card-image"
+      />
+      </div>
+      <h6 class="blood-card-name" style="color: black;" >Be someone's lifeline; donate blood</h6>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger btn-lg" data-toggle="modal" data-target="#exampleModalLong">
+ DONOR REGISTRATION
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLongTitle"><p class="text-danger">Blood Donation Eligibility</p></h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Here are the eligibility guidelines for blood donation,You are considered a perfect blood donor if you meet all of the conditions listed below. </h5>
+                    <p>
+                       1. Age: Donors must typically be at least 17 years old (age requirements may vary).
+                    </p>
+                    <p>
+                        2. Weight: Donors should weigh at least 110 pounds (50 kilograms).
+                    </p>
+                    <p>
+                        3. Health: Donors should be in good health on the day of donation, without any acute or chronic illnesses.
+                    </p>
+                    <p>
+                        4. Travel: Recent travel to high-risk areas may affect eligibility.
+                    </p>
+                    <p>
+                        5. Medications: Some medications can impact eligibility; inform the center about any medications.
+                    </p>
+                    <p>
+                        6. Blood Pressure: Blood pressure should be within a certain range.
+                    </p>
+                    <p>
+                        7. Iron Levels: Adequate iron levels are required.
+                    </p>
+                    <p>
+                        8. Pregnancy: Pregnant individuals are generally not eligible to donate.
+                    </p>
+                    <p>
+                        9. Medical History: Detailed medical history questions will be asked.
+                    </p>
+                    <p>
+                        10. High-Risk Behaviors: Engagement in high-risk behaviors may disqualify donors.
+                    </p>
+          <h6>if you'd like to learn more.<a href="/WhoCanCant" class="text-danger">click me</a></h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="/donate"><button type="button" class="btn btn-danger">NEXT</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+
+    <div class="blood-card-item2">
+      <img
+        src="https://media.istockphoto.com/id/867342480/vector/linear-donate-blood-icon-vector-iconic-design.jpg?s=612x612&w=0&k=20&c=tym08aPEIKi-c0IvTxOb6bvqH5qfHvWrYysxl51-hhA="
+        class="blood-card-image"
+      />
+      <h6 class="blood-card-name" style="color: black;">you become a superhero too save life's</h6>
+        <a href="/findblood"><button class=' btn btn-outline-danger btn-lg'><span>FIND DONAR BLOOD</span></button></a>
+
+    </div>
+      <!--caurosel-->
+        </div>
+  <div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="https://apollohealthlib.blob.core.windows.net/health-library/2021/06/shutterstock_541600759-scaled.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h3 class="blood-donation-heading">Who are eligible for donating blood?</h3>
+        <a href="/WhoCanCant"><button class=' btn btn-danger '><span>Read More</span></button></a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://t4.ftcdn.net/jpg/02/21/47/99/240_F_221479946_2yUmWRmVPBka6d4zcXbBhJbRra8WcpQV.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h3 class="blood-donation-heading">Importance of blood donation </h3>
+            <a href="/need"><button class=' btn btn-danger '><span>Read More</span></button></a>
+
+        </div>
+      </div>
+        <div class="carousel-item">
+        <img src="https://media.istockphoto.com/id/1124598435/photo/hands-holding-red-heart-health-insurance-donation-concept.jpg?s=612x612&w=0&k=20&c=mlakGwQG0GwvZnuYL2ncLNAaBPtSImoGNrB1pKGdn9s=" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h3 class="blood-donation-heading">What precaution we take while donating blood?</h3>
+            <a href="/precaution"><button class=' btn btn-danger '><span>Read More</span></button></a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://t4.ftcdn.net/jpg/01/32/22/49/240_F_132224931_mYX4RFeCXbIKiAzyJdG74MzzGyHqExgq.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h3 class="blood-donation-heading">Vision AND Mission of our project </h3>
+            <a href="/VisionandMission"><button class=' btn btn-danger '><span>Read More</span></button></a>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+    <!--video-->
+<div class="blood-videos-section pt-5 pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-5">
+                        <div class="text-center">
+                            <img src="https://img.freepik.com/premium-vector/blood-logo-icon-vector-template_306040-2060.jpg"  class="blood-videos-section-img"  style="width: 50%;height: 50%;" title="Blood Drop"/>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-7" >
+                        <h1 class="blood-videos-section-heading" style="color:rgb(189, 29, 29);">
+                            Why Should I Donate Blood?
+                        </h1>
+                        <p class="blood-videos-section-description" style="font-size:large;">
+                            Donating blood is a critical and selfless act that can save lives and provide numerous benefits to both the recipients and the donors themselves.
+                            Donating blood can save lives in emergencies, surgeries, and medical treatments.
+                            Provides a sense of satisfaction and fulfillment.
+                            <br>
+                        <p style="font-weight:bold;">If you have an interest in donating blood, click below.</p>
+                        </p>
+                                            <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+  click here
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You're a Hero in Disguise</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+Superheroes come in all forms, and today, you're our hero. Your blood donation makes you a lifesaver in our book!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="/donate"><button type="button" class="btn btn-danger" >Click To Register</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!--video-->
+    <div class="embed-responsive embed-responsive-16by9">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/ezafVzfJw60?si=tzxwvZgcNBq_3Pwj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+         <!--marquee-->
+    <div style="border:1px solid #EEE; margin:5px 0px; padding:30px 0px;">
+		<h3><marquee behavior='scroll' direction='left' scrollamount='5' onmouseover='this.stop()' onmouseout='this.start()' style="color: #961425;"> All Voluntary Donors are warned of likely misuse of blood donated by them at the hospital with or without the knowledge of the hospital management. At some places the hospital staff have taken the blood and sold it to others for a price. As a responsible citizen/voluntary blood donor, we request you to keep a watch on such people and hospitals. </marquee></h3>
+		</div>
+  <!--icons-->
+
+  <div class="follow-us-section pt-5 pb-5" id="followUsSection">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="follow-us-section-heading">Follow Us</h1>
+            </div>
+            <div class="col-12">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="follow-us-icon-container">
+                        <a href="https://www.twitter.com/"><i class="fab fa-twitter icon" title="twitter"></i></a>
+                    </div>
+                    <div class="follow-us-icon-container">
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram icon" title="instagram"></i></a>
+                    </div>
+                    <div class="follow-us-icon-container">
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook icon" title="facebook"></i>
+                   </a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--About Us-->
+<div class="footer-section pt-5 pb-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-12 text-center">
+              <img src="https://img.icons8.com/?size=160&id=wlA0vr6hjqO7&format=png" class="blood-logo" width="100vw;" />
+              <h1 class="footer-section-mail-id">InstantBloodDonars@IBD.com</h1>
+              <p class="footer-section-address">
+                  123 Gujarathi peta Srikakulam, Andhra pradesh, India.
+              </p>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+
+</body>
+</html>

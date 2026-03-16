@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <style>
+        .form {
+            position: relative;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: -3px 3px 10px -5px rgba(0, 0, 0, 0.2);
+            background: #f2f3f7;
+            padding: 30px 30px;
+            max-width: 500px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "sans-serif", "Poppins";
+        }
+
+        body {
+            position: relative;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+            background-size: 100% 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .form form button.button {
+            height: 45px;
+            border: none;
+            width: 100%;
+            font-size: 17px;
+            border-radius: 15px;
+            cursor: pointer;
+            margin-top: 13px;
+            border: 2px solid;
+        }
+
+        .main {
+            height: 150px;
+            margin-left: 110px;
+            margin-top: 50px;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .main .stars {
+            height: 150px;
+            width: 500px;
+            text-align: center;
+        }
+
+        .stars input {
+            display: none;
+        }
+
+        .stars label {
+            float: right;
+            font-size: 100px;
+            color: lightgrey;
+            margin: 0 5px;
+            text-shadow: 1px 1px #bbb;
+        }
+
+        .stars label::before {
+            content: '★';
+        }
+
+        .stars input:checked~label {
+            color: gold;
+            text-shadow: 1px 1px #c60;
+        }
+
+        .stars:not(:checked)>label:hover,
+        .stars:not(:checked)>label:hover~label {
+            color: gold;
+        }
+
+        .stars input:checked>label:hover,
+        .stars input:checked>label:hover~label {
+            color:#FF0000 ;
+            text-shadow: 1px 1px #FF0000;
+        }
+
+        .stars .result::before {
+            position: absolute;
+            content: '';
+            left: 75%;
+            transform: translateX(-50%);
+            bottom: -80px;
+            font-size: 30px;
+            color: black;
+            font-family: 'poppins', sans-serif;
+            display: none;
+            height: 100px;
+            width: 300px;
+        }
+        .stars input:checked~.result:before {
+            display: block;
+        }
+        .stars #five:checked~.result:before {
+            content: "I Love It 😍";
+        }
+        .stars #four:checked~.result:before {
+            content: "I Like It 😃";
+        }
+        .stars #three:checked~.result:before {
+            content: "It's Good 🙄";
+        }
+        .stars #two:checked~.result:before {
+            content: "I Don't Like It 😭";
+        }
+
+        .stars #one:checked~.result:before {
+            content: "I Hate It 😠";
+        }
+
+        textarea {
+            outline: none;
+            border: 2px solid;
+            border-radius:10px;
+            padding: 10px;
+            font-size: 15px;
+            margin-top: -50px;
+        }
+    </style>
+</head>
+
+<body>
+<!--navbar-->
+	 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="#" style="font-family:Aparajita;font-weight:bold;font-size:150%;">INSTANT BLOOD DONORS</a>
+            <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                &#9776;
+            </button>
+            <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item">
+				<a class="nav-link" href="/">Home</a>
+			  </li>
+                       <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Services
+                </a>
+                <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                    <a class="dropdown-item" href="/donate">Donor Registration</a>
+                    <a class="dropdown-item" href="/findblood">Find Blood Donor</a>
+                </div>
+            </li>
+                    <li class="nav-item"><a href="#followUsSection" class="nav-link">Follow Us</a></li>
+                    <li class="nav-item"><a href="/feedback" class="nav-link">feedback</a></li>
+                </ul>
+                <!--login-->
+                <div class="nav navbar-nav flex-row justify-content-between ml-auto">
+                       <a href="/login"><button type="button" id="button1"  class="btn btn-danger" >Login <span class="caret"></span></button></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<div class="container mt-5">
+    <div class="col-md-6 offset-md-3 col-sm-12" >
+    <div class="form">
+        <h1>Feedback</h1>
+        <form action="/postfeedback" method="POST">
+            <div class="main">
+                <div class="stars">
+                    <input type="radio" id="five" name="rating" value="5">
+                    <label for="five"></label>
+                    <input type="radio" id="four" name="rating" value="4">
+                    <label for="four"></label>
+                    <input type="radio" id="three" name="rating" value="3">
+                    <label for="three"></label>
+                    <input type="radio" id="two" name="rating" value="2">
+                    <label for="two"></label>
+                    <input type="radio" id="one" name="rating" value="1">
+                    <label for="one"></label>
+                    <span class="result" id="data" name="Data"></span>
+                </div>
+            </div>
+            <div class="input">
+                <textarea name="feedbackText" placeholder="Describe Your Experience" cols="53" rows="5"
+                    required></textarea>
+            </div>
+            <div class="submit">
+                    <button type="submit" class="button btn btn-danger">post</button>
+            </div>
+        </form>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>

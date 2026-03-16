@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <title>Registration</title>
+    <style>
+ .custom-container {
+            max-width: 500px;/* Adjust the width as needed */
+        }
+         .custom-input:focus {
+            border-color: #FF0000; /* Set the border color to red (#FF0000) on focus */
+            box-shadow: 0 0 5px #FF0000; /* Optional: Add a box shadow to emphasize the focus */
+        }
+    </style>
+   
+    
+</head>
+<body>
+       <h1 class="text-danger" style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align:center;">Register as a Donate</h1>
+             <br><div id="subHeader_48" class="responsive-font-example" style="text-align:center;font-weight:bold;">Confidential - Please answer the following questions correctly. This will help to protect you and the patient who receives your blood.  </div>
+<div class="container  d-flex justify-content-center align-items-center">
+        <div class="container mt-5 custom-container">
+        <form action="{{url_for('addrec')}}" method="POST" id="myForm"onsubmit="return validateForm()">
+            <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="first">First Name</label>
+                <input type="text" class=" form-control custom-input" id="first" name="fn" placeholder="Enter First Name" >
+                <span id="firstid" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="last">Last Name</label>
+                <input type="text" class="form-control custom-input" id="last"  name="ln" placeholder="Enter Last Name" >
+                <span id="lastid" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="emailid">Email</label>
+                <input type="text" class="form-control custom-input" id="emailid" name="ei" placeholder="Enter Email">
+                <span id="emailname" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="phone">Phone Number</label>
+                <input type="text" class="form-control custom-input" id="phone"  name="pn" placeholder="Enter Phone Number">
+                <span id="phoneno" class="text-danger"></span>
+            </div>
+            </div>
+             <div class="form-group">
+                <label for="birth">Date Of Birth</label>
+                <input type="date" class="form-control custom-input" id="birth"  name="dob"placeholder="DD:MM:YYYY">
+                <span id="date" class="text-danger"></span>
+            </div>
+            <div class="row">
+            <div class="col-12 col-md-6">
+                <label for="location">Location</label>
+                 <select class="form-control custom-input" id="location" name="loc">
+                      <option disabled selected hidden>~select location</option>
+                     <option value="Amadalavalasa">Amadalavalasa</option>
+                     <option value="Chilakapalem">Chilakapalem</option>
+                     <option value="Etcherla">Etcherla</option>
+                     <option value="LNPeta">LNPeta</option>
+                     <option value="Makkuva">Makkuva</option>
+                      <option value="Palakonda">Palakonda</option>
+                     <option value="Ponduru">Ponduru</option>
+                     <option value="Rajam">Rajam</option>
+                     <option value="Srikakulam">Srikakulam</option>
+                     <option value="Tekkali">Tekkali</option>
+                      <option value="Vijayanagaram">Vijayanagaram</option>
+                </select>
+                <span id="locname" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6">
+                <label for="blood">Blood Group</label>
+                <select class="form-control custom-input" id="blood"  name="bg">
+                     <option disabled selected hidden>~select blood group</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                </select>
+                <span id="bloodgroup" class="text-danger"></span>
+            </div>
+                </div><br>
+             <div class="form-check">
+      <center><input type="checkbox" class="form-check-input" id="agree" name="agree">
+      <label class="form-check-label" for="agree">I agree to the terms and conditions</label></center>
+      <span id="agreeid" class="text-danger"></span>
+    </div>
+            <center><button type="submit" class="btn btn-danger" id="submitBtn">Submit</button></center>
+        </form>
+            <div id="errorMessages" class="text-danger mt-3"></div>
+    </div>
+</div>
+ <!--form validation for donate page-->
+ <script>
+    function validateForm()
+    {
+        var first = document.getElementById("first").value;
+        var last = document.getElementById("last").value;
+        var emailid = document.getElementById("emailid").value;
+        var phone = document.getElementById("phone").value;
+        var birth = document.getElementById("birth").value;
+        var location = document.getElementById("location").value;
+        var blood = document.getElementById("blood").value;
+        var agree = document.getElementById("agree").checked;
+//validate atleast 2 charcters
+if(first.length<2)
+{
+    document.getElementById("firstid").innerHTML="** firstname must be 2 characters long **";
+    return false;
+}
+if(last.length<2)
+{
+    document.getElementById("lastid").innerHTML=" ** lastname must be 2 characters long **";
+    return false;
+}
+//validate email 
+var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+if(!emailPattern.test(emailid)){
+    document.getElementById("emailname").innerHTML="** Invalid email **";
+    return false;
+}
+//phone validation
+var phonePattern = /^\d{3}-?\d{3}-?\d{4}$/;
+if(!phonePattern.test(phone)){
+    document.getElementById("phoneno").innerHTML="**Invalid phone number**";
+    return false;
+}
+//dob validation
+if(birth===""){
+    document.getElementById("date").innerHTML="**Date of Birth is required**";
+    return false;
+}
+//validate location
+if(location===""){
+    document.getElementById("locname").innerHTML="**please select location**";
+    return  false;
+}
+//validate blood group
+if(blood===""){
+    document.getElementById("bloodgroup").innerHTML="**please select blood group**";
+    return false;
+}
+//validate agreement box
+//if(!agree){
+//   document.getElementById("agreeid").innerHTML="**Agree to terms and conditions**";
+//  return false;
+}
+</script>
+</body>
+</html>

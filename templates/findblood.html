@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donar</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .custom-container {
+            max-width: 400px;/* Adjust the width as needed */
+        }
+
+    </style>
+</head>
+<body>
+  <div class="container mt-5 custom-container">
+    <h1 class="text-danger" style="font-weight: bold;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align:center;">Find Blood Donar</h1>
+    <form  method="POST" action="/search">
+      <!-- Location Select -->
+      <div class="form-group">
+        <label for="location">Location:</label>
+        <select class="form-control custom-input" id="location"  name="location1" required>
+                     <option disabled selected hidden>~select location</option>
+                     <option value="Amadalavalasa">Amadalavalasa</option>
+                     <option value="Chilakapalem">Chilakapalem</option>
+                     <option value="Etcherla">Etcherla</option>
+                     <option value="LNPeta">LNPeta</option>
+                     <option value="Makkuva">Makkuva</option>
+                     <option value="Palakonda">Palakonda</option>
+                     <option value="Ponduru">Ponduru</option>
+                     <option value="Rajam">Rajam</option>
+                     <option value="Srikakulam">Srikakulam</option>
+                     <option value="Tekkali">Tekkali</option> may
+                     <option value="Vijayanagaram">Vijayanagaram</option>
+                </select>
+      </div>
+
+      <!-- Blood Group Select -->
+      <div class="form-group">
+        <label for="blood-group">Blood Group:</label>
+        <select class="form-control" id="blood-group" name="blood_group1">
+          <option disabled selected hidden>~select blood group</option>
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+      </div>
+      <center><input type="submit" value="search"  class="btn btn-danger" id="submitBtn" >
+   </center> </form>
+</div><br><br>
+  <!--marquee-->
+  <div class="container">
+      <div class="row">
+	<div class="alert alert-danger alert-dismissible" role="alert">
+  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <strong><i class="fa fa-warning"></i> Note!</strong> <marquee><p style="font-family: Impact; font-size: 18pt">Please remember, selling blood for money is not just unethical, but also illegal in many places. Blood donation should always be a voluntary and altruistic act. Your generosity can save lives without the need for compensation.</p></marquee>
+	</div>
+  </div>
+  <!-- Include Bootstrap JS and jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+</script>
+</body>
+</html>

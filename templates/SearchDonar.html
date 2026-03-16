@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <title>Fetching donar</title>
+</head>
+<body>
+                <h1 class="form-heading text-center text-danger" style="font-family:Bree Serif; color:#0f3d14">Donor Details</h1>
+            <table class="styled-table" style="width:100% ">
+                <thead style="font-size:20px; font-family:Quicksand; ">
+                      <tr class="active-row" style="text-align:center">
+                        <th>Name</th>
+                        <th>phone number</th>
+                        <th>email</th>
+                        <th>Blood group</th>
+                        <th>dob</th>
+                        <th>Location</th>
+                      </tr>
+                  </thead>
+                <tbody style="font-size:20px;font-family:Quicksand;">
+                  {% for donor in donors%}
+                      <tr class="active-row" style="text-align:center;">
+                          <td>{{donor[0]}}{{donor[1]}}</td>
+                         <td>{{donor[2]}}</td>
+                         <td>{{donor[3]}}</td>
+                         <td>{{donor[4]}}</td>
+                         <td>{{donor[5]}}</td>
+                         <td>{{donor[6]}}</td>
+                      </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+</div>
+</body>
+</html>
